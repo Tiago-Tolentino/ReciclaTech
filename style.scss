@@ -3,3 +3,111 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+main{
+    // background-color: #F0FDF4;
+}
+
+header{
+    // border: solid;
+    font-family: "poppins";
+    font-style: normal;
+    font-weight: 300;
+    display: flex;
+    text-align: center;
+    padding: .6%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    .container-menu{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    ul{
+        // border: solid;
+        display: flex;
+        align-items: center;
+        // Faz com que o texto fique em uma linha
+        white-space: nowrap;
+        list-style: none;
+        padding: 2px;
+        gap: 30px;
+    }
+    button{
+        background-color: #16A34A;
+        color: white;
+        padding: 20px;
+        border: none;
+        border-radius: 8px;
+    }
+
+    img{
+        width: 13vw;
+        height: 5vh;
+    }
+}
+
+.introducao{
+    //border: solid;
+    display: flex;
+    font-family: "inter";
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    h1{
+        font-weight: bold;
+        font-size: 3rem;
+    }
+
+    p{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .botoes{
+        display: flex;
+        justify-content: initial;
+        gap: 30px;
+        #doar{
+        width: 160px;
+        background-color: #16A34A;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        border: none;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border-radius: 8px;
+        
+        }
+        #adquirir{
+            width: 160px;
+            background-color: white;
+            color: #2563EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            border: 1px solid #2563EB;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border-radius: 8px;
+        }
+
+    
+    }
+    
+}

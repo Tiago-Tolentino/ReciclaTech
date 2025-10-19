@@ -36,6 +36,7 @@ header button {
   padding: 20px;
   border: none;
   border-radius: 8px;
+  font-family: "poppins";
 }
 header img {
   width: 13vw;
@@ -53,10 +54,13 @@ header img {
   margin-bottom: 10px;
 }
 .introducao h1 {
+  color: #1F2937;
   font-weight: bold;
   font-size: 3rem;
 }
-.introducao p {
+.introducao h2 {
+  color: #4B5563;
+  font-weight: 300;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -64,9 +68,10 @@ header img {
   display: flex;
   justify-content: initial;
   gap: 30px;
+  font-family: "poppins";
 }
 .introducao .botoes #doar {
-  width: 160px;
+  width: 180px;
   background-color: #16A34A;
   color: white;
   display: flex;
@@ -79,9 +84,10 @@ header img {
   padding-bottom: 10px;
   padding-top: 10px;
   border-radius: 8px;
+  font-family: "poppins";
 }
 .introducao .botoes #adquirir {
-  width: 160px;
+  width: 180px;
   background-color: white;
   color: #2563EB;
   display: flex;
@@ -94,4 +100,229 @@ header img {
   padding-bottom: 10px;
   padding-top: 10px;
   border-radius: 8px;
+  font-family: "poppins";
+}
+
+.dados {
+  background-color: #f3f5f8;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+.dados h2 {
+  font-family: "poppins";
+  color: #16a34a;
+  font-size: 35px;
+}
+.dados p {
+  color: #4B5563;
+  font-family: "poppins";
+  font-weight: 200;
+}
+.dados div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.function {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.function h2 {
+  color: #1F2937;
+  font-family: "poppins";
+  font-size: 2rem;
+  padding: 5px;
+}
+.function h3 {
+  color: #4B5563;
+  font-family: "inter";
+  font-weight: 300;
+  padding: 5px;
+}
+
+.beneficios {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 30px;
+}
+.beneficios .doadores {
+  width: 470px;
+  height: 400px;
+  background-color: #F3F5F8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+.beneficios .doadores h3 {
+  font-family: "inter";
+  font-weight: 400;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.beneficios .doadores h4 {
+  font-family: "inter";
+  font-weight: 300;
+  font-size: 16px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  margin: 5px;
+}
+.beneficios .doadores ol {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "poppins";
+  font-weight: bold;
+  font-size: 14px;
+}
+.beneficios .doadores ol P {
+  font-weight: 300;
+  font-size: 14px;
+}
+.beneficios .adquirentes {
+  width: 470px;
+  height: 400px;
+  background-color: #F3F5F8;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+.beneficios .adquirentes h3 {
+  font-family: "inter";
+  font-weight: 400;
+  color: #2563EB;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.beneficios .adquirentes h4 {
+  font-family: "inter";
+  font-weight: 300;
+  font-size: 16px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  margin: 5px;
+}
+.beneficios .adquirentes ol {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "poppins";
+  font-weight: bold;
+  font-size: 14px;
+}
+.beneficios .adquirentes ol P {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.disponiveis {
+  background-color: #F3F5F8;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.disponiveis .title-produtos {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.disponiveis .title-produtos h2 {
+  color: #1F2937;
+  font-family: "poppins";
+  font-size: 2rem;
+  padding: 5px;
+}
+.disponiveis .title-produtos h3 {
+  color: #4B5563;
+  font-family: "inter";
+  font-weight: 300;
+  padding: 5px;
+}
+.disponiveis .produtos {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.disponiveis .produtos h4 {
+  font-family: "inter";
+  font-weight: 400;
+  font-size: 16px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.disponiveis .produtos p {
+  font-family: "poppins";
+  font-weight: 300;
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+.disponiveis .produtos button {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  padding-right: 25px;
+  padding-left: 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: #16A34A;
+  color: white;
+  font-family: "poppins";
+}
+.disponiveis .produtos .fones {
+  border: 2px solid #16A34A;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding-bottom: 20px;
+}
+.disponiveis .produtos .fones img {
+  width: 300px;
+}
+.disponiveis .produtos .notebooks {
+  border: 2px solid #16A34A;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  padding-bottom: 20px;
+}
+.disponiveis .produtos .notebooks img {
+  width: 298px;
+}
+.disponiveis .produtos .smartphones {
+  border: 2px solid #16A34A;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  padding-bottom: 20px;
+}
+.disponiveis .produtos .smartphones img {
+  width: 298px;
 }/*# sourceMappingURL=style.css.map */

@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-main{
-    // background-color: #F0FDF4;
-}
-
 header{
     // border: solid;
     font-family: "poppins";
@@ -21,6 +17,7 @@ header{
     margin-top: 10px;
     margin-bottom: 10px;
     justify-content: space-between;
+    border-bottom: 1px solid #d1d1d1;
     .container-menu{
         display: flex;
         align-items: center;
@@ -44,6 +41,7 @@ header{
         border: none;
         border-radius: 8px;
         font-family: "poppins";
+        margin-bottom: 10px;
     }
 
     img{
@@ -311,6 +309,7 @@ header{
         }
         .fones{
             border: 2px solid #16A34A;
+            border-radius: 5px;
             img{
                 width: 300px;
             }
@@ -324,6 +323,7 @@ header{
         }
         .notebooks{
             border: 2px solid #16A34A;
+            border-radius: 5px;
             img{
                 width: 298px;
             }
@@ -338,6 +338,7 @@ header{
         }
         .smartphones{
             border:2px solid #16A34A;
+            border-radius: 5px;
             img{
                 width: 298px;
             }
@@ -517,3 +518,101 @@ footer{
     }
 }
 
+@media (max-width:1000px){
+    header{
+        img{
+            width: 100px;
+            height: 25px;
+        }
+    }
+    .beneficios{
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+    }
+}
+
+@media (max-width:920px){
+    header{
+        flex-direction: column;
+        .container-menu{
+            display: flex;
+            justify-content: space-between;
+        }
+        img{
+            width: 100px;
+            height: 25px;
+        }
+    }
+    .introducao{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        .intro{
+            align-items: center;
+            .botoes{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+    .disponiveis{
+        .produtos{
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    .comentarios{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 800px){
+    header{
+        margin-bottom: 20px;
+        .container-menu{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .introducao{
+        h1{
+            font-size: 2rem;
+        }
+        h2{
+            font-size: 1rem;
+        }
+        .reciclagem-inicio{
+            width: 300px;
+        }
+    }
+    .dados{
+        h2{
+            font-size: 20px;
+        }
+        p{
+            font-size: 10px;
+        }
+    }
+    .saiba-mais{
+        h3{
+            padding: 10px;
+        }
+    }
+    footer{
+        .rodape{
+            flex-direction: column;
+        }
+    }
+    .beneficios{
+        .doadores{
+            width: 400px;
+        }
+        .adquirentes{
+            width: 400px;
+        }
+    }
+}

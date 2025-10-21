@@ -16,6 +16,7 @@ header {
   margin-top: 10px;
   margin-bottom: 10px;
   justify-content: space-between;
+  border-bottom: 1px solid #d1d1d1;
 }
 header .container-menu {
   display: flex;
@@ -40,6 +41,7 @@ header button {
   border: none;
   border-radius: 8px;
   font-family: "poppins";
+  margin-bottom: 10px;
 }
 header img {
   width: 13vw;
@@ -293,6 +295,7 @@ header img {
 }
 .disponiveis .produtos .fones {
   border: 2px solid #16A34A;
+  border-radius: 5px;
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -305,6 +308,7 @@ header img {
 }
 .disponiveis .produtos .notebooks {
   border: 2px solid #16A34A;
+  border-radius: 5px;
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -318,6 +322,7 @@ header img {
 }
 .disponiveis .produtos .smartphones {
   border: 2px solid #16A34A;
+  border-radius: 5px;
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -492,4 +497,86 @@ footer .redes-sociais {
   justify-content: start;
   padding-top: 10px;
   gap: 10px;
+}
+
+@media (max-width: 1000px) {
+  header img {
+    width: 100px;
+    height: 25px;
+  }
+  .beneficios {
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+  }
+}
+@media (max-width: 920px) {
+  header {
+    flex-direction: column;
+  }
+  header .container-menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  header img {
+    width: 100px;
+    height: 25px;
+  }
+  .introducao {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .introducao .intro {
+    align-items: center;
+  }
+  .introducao .intro .botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .disponiveis .produtos {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .comentarios {
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  header {
+    margin-bottom: 20px;
+  }
+  header .container-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .introducao h1 {
+    font-size: 2rem;
+  }
+  .introducao h2 {
+    font-size: 1rem;
+  }
+  .introducao .reciclagem-inicio {
+    width: 300px;
+  }
+  .dados h2 {
+    font-size: 20px;
+  }
+  .dados p {
+    font-size: 10px;
+  }
+  .saiba-mais h3 {
+    padding: 10px;
+  }
+  footer .rodape {
+    flex-direction: column;
+  }
+  .beneficios .doadores {
+    width: 400px;
+  }
+  .beneficios .adquirentes {
+    width: 400px;
+  }
 }/*# sourceMappingURL=style.css.map */

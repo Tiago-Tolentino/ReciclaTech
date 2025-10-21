@@ -199,6 +199,7 @@ header img {
   width: 470px;
   height: 400px;
   background-color: #F3F5F8;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 20px;
@@ -304,7 +305,7 @@ header img {
   padding-bottom: 20px;
 }
 .disponiveis .produtos .fones img {
-  width: 300px;
+  width: 100%;
 }
 .disponiveis .produtos .notebooks {
   border: 2px solid #16A34A;
@@ -318,7 +319,7 @@ header img {
   padding-bottom: 20px;
 }
 .disponiveis .produtos .notebooks img {
-  width: 298px;
+  width: 100%;
 }
 .disponiveis .produtos .smartphones {
   border: 2px solid #16A34A;
@@ -332,7 +333,7 @@ header img {
   padding-bottom: 20px;
 }
 .disponiveis .produtos .smartphones img {
-  width: 298px;
+  width: 100%;
 }
 
 .comentario {

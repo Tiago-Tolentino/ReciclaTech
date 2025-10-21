@@ -212,6 +212,7 @@ header{
         width: 470px;
         height: 400px;
         background-color: #F3F5F8;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 20px;
@@ -311,7 +312,7 @@ header{
             border: 2px solid #16A34A;
             border-radius: 5px;
             img{
-                width: 300px;
+                width: 100%;
             }
             width: 300px;
             
@@ -325,7 +326,7 @@ header{
             border: 2px solid #16A34A;
             border-radius: 5px;
             img{
-                width: 298px;
+                width: 100%;
             }
             width: 300px;
             
@@ -340,7 +341,7 @@ header{
             border:2px solid #16A34A;
             border-radius: 5px;
             img{
-                width: 298px;
+                width: 100%;
             }
             width: 300px;
             display: flex;

@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+button:hover{
+    cursor: pointer;
+    background-color: darken($color: #035e24, $amount: 0);
+}
+
 header{
     // border: solid;
     font-family: "poppins";
@@ -42,6 +47,10 @@ header{
         border-radius: 8px;
         font-family: "poppins";
         margin-bottom: 10px;
+        &:hover{
+            cursor: pointer;
+    background-color: darken($color: #035e24, $amount: 0);
+        }
     }
 
     img{
@@ -94,6 +103,10 @@ header{
             padding-top: 10px;
             border-radius: 8px;
             font-family: "poppins";
+            &:hover{
+            cursor: pointer;
+            background-color: darken($color: #035e24, $amount: 0);
+            }
         
         }
         #adquirir{
@@ -111,6 +124,11 @@ header{
             padding-top: 10px;
             border-radius: 8px;
             font-family: "poppins";
+            &:hover{
+            cursor: pointer;
+            background-color: darken($color: #2563EB, $amount: 0);
+            color: white;
+            }
         }
 
     
@@ -307,6 +325,11 @@ header{
             background-color: #16A34A;
             color: white;
             font-family: "poppins";
+            &:hover{
+            cursor: pointer;
+            background-color: darken($color: #035e24, $amount: 0);
+            }
+            
         }
         .fones{
             border: 2px solid #16A34A;
@@ -455,6 +478,10 @@ header{
             border: none;
             border-radius: 8px;
             font-family: "poppins";
+            &:hover{
+            cursor: pointer;
+            background-color: darken($color: #035e24, $amount: 0);
+            }
         }
         .mais{
             width: 150px;
@@ -464,6 +491,11 @@ header{
             padding: 10px;
             border-radius: 8px;
             font-family: "poppins";
+            &:hover{
+            cursor: pointer;
+            background-color: darken($color: #16A34A, $amount: 0);
+            color: #ffffff;
+            }
         }
     }
 }
@@ -516,6 +548,9 @@ footer{
         justify-content: start;
         padding-top: 10px;
         gap: 10px;
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
 

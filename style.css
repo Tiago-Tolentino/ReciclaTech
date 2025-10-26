@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+button:hover {
+  cursor: pointer;
+  background-color: #035e24;
+}
+
 header {
   font-family: "poppins";
   font-style: normal;
@@ -42,6 +47,10 @@ header button {
   border-radius: 8px;
   font-family: "poppins";
   margin-bottom: 10px;
+}
+header button:hover {
+  cursor: pointer;
+  background-color: #035e24;
 }
 header img {
   width: 13vw;
@@ -91,6 +100,10 @@ header img {
   border-radius: 8px;
   font-family: "poppins";
 }
+.introducao .botoes #doar:hover {
+  cursor: pointer;
+  background-color: #035e24;
+}
 .introducao .botoes #adquirir {
   width: 180px;
   background-color: white;
@@ -106,6 +119,11 @@ header img {
   padding-top: 10px;
   border-radius: 8px;
   font-family: "poppins";
+}
+.introducao .botoes #adquirir:hover {
+  cursor: pointer;
+  background-color: #2563eb;
+  color: white;
 }
 
 .dados {
@@ -294,6 +312,10 @@ header img {
   color: white;
   font-family: "poppins";
 }
+.disponiveis .produtos button:hover {
+  cursor: pointer;
+  background-color: #035e24;
+}
 .disponiveis .produtos .fones {
   border: 2px solid #16A34A;
   border-radius: 5px;
@@ -439,6 +461,10 @@ header img {
   border-radius: 8px;
   font-family: "poppins";
 }
+.saiba-mais .btn .comecar:hover {
+  cursor: pointer;
+  background-color: #035e24;
+}
 .saiba-mais .btn .mais {
   width: 150px;
   background-color: #ffffff;
@@ -447,6 +473,11 @@ header img {
   padding: 10px;
   border-radius: 8px;
   font-family: "poppins";
+}
+.saiba-mais .btn .mais:hover {
+  cursor: pointer;
+  background-color: #16a34a;
+  color: #ffffff;
 }
 
 footer {
@@ -498,6 +529,9 @@ footer .redes-sociais {
   justify-content: start;
   padding-top: 10px;
   gap: 10px;
+}
+footer .redes-sociais:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 1000px) {

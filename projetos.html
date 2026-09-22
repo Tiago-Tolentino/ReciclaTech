@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projetos | ReciclaTech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <a href="#conteudo">Ir para o conteúdo</a>
+<body class="pagina-interna pagina-projetos">
+    <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
     <header>
-        <a href="index.html"><img src="image/Logo.png" alt="ReciclaTech" width="200" height="40"></a>
-        <nav aria-label="Navegação principal">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html" aria-current="page">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-            </ul>
+        <img src="./image/Logo.png" alt="Logo">
+        <nav class="container-menu" aria-label="Navegação principal">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+        <a href="cadastro.html">Começar agora</a>
         </nav>
     </header>
-    <main id="conteudo" class="function">
-        <section aria-labelledby="titulo-projetos">
+    <main id="conteudo" class="conteudo">
+        <section class="apresentacao" aria-labelledby="titulo-projetos">
             <h1 id="titulo-projetos">Projetos e formas de colaborar</h1>
             <p>A ReciclaTech promove a reutilização de eletrônicos e a inclusão digital. Conheça nossas frentes de atuação e encontre uma forma de participar.</p>
             <nav aria-label="Assuntos desta página">
@@ -40,7 +47,7 @@
                 <li>Divulgação de campanhas e apoio na organização de entregas.</li>
             </ul>
             <p>No cadastro, marque a opção de voluntariado e informe suas habilidades e disponibilidade. A participação será combinada conforme as necessidades das atividades.</p>
-            <a href="cadastro.html#colaboracao">Quero ser voluntário</a>
+            <a class="botao" href="cadastro.html#colaboracao">Quero ser voluntário</a>
         </section>
         <section id="campanhas" aria-labelledby="titulo-campanhas">
             <h2 id="titulo-campanhas">Campanhas de doação</h2>
@@ -65,18 +72,45 @@
                 <li>Quando o atendimento estiver disponível, combine a entrega ou solicite os meios oficiais de contribuição antes de realizar qualquer pagamento.</li>
             </ol>
             <p>O cadastro desta versão é demonstrativo e ainda não registra solicitações.</p>
-            <a href="cadastro.html">Acessar cadastro</a>
+            <a class="botao" href="cadastro.html">Acessar cadastro</a>
         </section>
     </main>
-    <footer>
-        <p>ReciclaTech — tecnologia, solidariedade e sustentabilidade.</p>
-        <nav aria-label="Navegação do rodapé">
+    <footer id="contato">
+        <div class="rodape">
+            <div>
+            <img class="logo_branco" src="./image/logo_branco.png" alt="logo">
+            <p>Conectando pessoas através da sustentabilidade e tecnologia</p>
+            </div>
+            <div>
+            <h5>Links rápidos</h5>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="index.html#como-funciona">Como funciona</a></li>
+            <li><a href="projetos.html#como-doar">Doar</a></li>
+            <li><a href="index.html#produtos">Adquirir</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
-        </nav>
+            </div>
+            <div>
+            <h5>Participação</h5>
+            <ul>
+            <li> <a href="projetos.html">Projetos</a></li>
+            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+            <li><a href="projetos.html#campanhas">Campanhas</a></li>
+            <li><a href="cadastro.html">Participar</a></li>
+            </ul>
+            </div>
+            <div>
+            <h5>Redes Sociais</h5>
+            <p>Siga-nos para novidades e dicas de sustentabilidade!</p>
+            <div class="redes-sociais">
+                <img src="./image/icon_facebook.png" alt="icone Facebook">
+                <img src="./image/icon_email.png" alt="icone email">
+                <img src="./image/icon_Twitter.png" alt="icone Twitter">
+            </div>
+            </div>
+        </div>
+
+        <p>© 2025 ReciclaTech. Todos os direitos reservados. Feito com 💚 para um mundo melhor.</p>
     </footer>
 </body>
 </html>

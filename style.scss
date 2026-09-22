@@ -6,7 +6,7 @@
 
 button:hover{
     cursor: pointer;
-    background-color: darken($color: #035e24, $amount: 0);
+    background-color: #035e24;
 }
 
 header{
@@ -57,7 +57,7 @@ header{
             font-family: "poppins";
             &:hover{
             cursor: pointer;
-            background-color: darken($color: #035e24, $amount: 0);
+            background-color: #035e24;
             }
 
     }
@@ -115,7 +115,7 @@ header{
             font-family: "poppins";
             &:hover{
             cursor: pointer;
-            background-color: darken($color: #035e24, $amount: 0);
+            background-color: #035e24;
             }
         
         }
@@ -136,7 +136,7 @@ header{
             font-family: "poppins";
             &:hover{
             cursor: pointer;
-            background-color: darken($color: #2563EB, $amount: 0);
+            background-color: #2563EB;
             color: white;
             }
         }
@@ -337,7 +337,7 @@ header{
             font-family: "poppins";
             &:hover{
             cursor: pointer;
-            background-color: darken($color: #035e24, $amount: 0);
+            background-color: #035e24;
             }
             
         }
@@ -490,7 +490,7 @@ header{
             font-family: "poppins";
             &:hover{
             cursor: pointer;
-            background-color: darken($color: #035e24, $amount: 0);
+            background-color: #035e24;
             }
         }
         .mais{
@@ -503,7 +503,7 @@ header{
             font-family: "poppins";
             &:hover{
             cursor: pointer;
-            background-color: darken($color: #16A34A, $amount: 0);
+            background-color: #16A34A;
             color: #ffffff;
             }
         }
@@ -661,4 +661,251 @@ footer{
             width: 400px;
         }
     }
+}
+
+// Páginas internas: a mesma identidade visual da página inicial.
+$verde: #15803d;
+$verde-escuro: #166534;
+$texto: #1f2937;
+$texto-secundario: #4b5563;
+$borda: #d1d5db;
+$fundo: #f3f5f8;
+
+@mixin painel($espaco: 2rem) {
+    padding: $espaco;
+    background: #fff;
+    border: 1px solid #e2e8e5;
+    border-radius: 16px;
+}
+
+@mixin foco-visivel {
+    outline: 3px solid #2563eb;
+    outline-offset: 4px;
+}
+
+// Os controles de navegação da página inicial agora são links.
+header .container-menu > a,
+.disponiveis .produtos > div > a {
+    display: inline-flex;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: $verde;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+
+    &:hover { background: $verde-escuro; }
+}
+
+.introducao .botoes a,
+.saiba-mais .btn a { text-decoration: none; }
+
+a:focus-visible,
+button:focus-visible { @include foco-visivel; }
+
+.pagina-interna {
+    background: #fff;
+
+    .pular-conteudo {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        z-index: 10;
+        padding: 12px 20px;
+        background: #fff;
+        color: $verde-escuro;
+        transform: translateY(-150%);
+
+        &:focus { transform: translateY(0); }
+    }
+
+
+
+    .conteudo {
+        color: $texto;
+        font-family: "Inter", Arial, sans-serif;
+        line-height: 1.65;
+        width: min(1120px, calc(100% - 48px));
+        margin: 48px auto 64px;
+    }
+
+    h1, h2, h3, legend {
+        font-family: "Poppins", Arial, sans-serif;
+        line-height: 1.3;
+        font-weight: 600;
+    }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -0.04em; }
+    h2 { margin-bottom: 16px; font-size: 1.5rem; }
+    h3 { margin-bottom: 12px; font-size: 1.1rem; }
+    main p { color: $texto-secundario; }
+    main p + p { margin-top: 12px; }
+    section, fieldset { scroll-margin-top: 24px; }
+    main a:not(.botao) { color: $verde-escuro; text-underline-offset: 4px; }
+
+    .botao {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 48px;
+        padding: 12px 24px;
+        border: 0;
+        border-radius: 8px;
+        background: $verde;
+        color: #fff;
+        font: 600 0.95rem "Poppins", sans-serif;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover { background: $verde-escuro; }
+    }
+
+
+}
+
+.pagina-projetos .conteudo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+
+    > section {
+        @include painel;
+        min-width: 0;
+
+        > ul, > ol {
+            padding-left: 24px;
+            margin: 20px 0;
+            color: $texto-secundario;
+
+            li + li { margin-top: 12px; }
+            li::marker { color: $verde; font-weight: 700; }
+        }
+        > .botao { margin-top: 24px; }
+    }
+
+    .apresentacao {
+        grid-column: 1 / -1;
+        padding: clamp(24px, 5vw, 56px);
+        background: #eaf6ee;
+        border-color: #cde7d4;
+
+        > p { max-width: 740px; margin-top: 20px; font-size: 1.05rem; }
+        nav ul { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; list-style: none; }
+        nav a {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #fff;
+            border: 1px solid #cde7d4;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+
+            &:hover { background: #dcfce7; }
+        }
+    }
+
+    #campanhas article {
+        padding: 20px 0;
+        border-top: 1px solid #e2e8e5;
+
+        &:last-child { padding-bottom: 0; }
+        h3 { color: $verde-escuro; }
+    }
+
+    #como-doar {
+        grid-column: 1 / -1;
+
+        ol { columns: 2; column-gap: 48px; }
+        li { break-inside: avoid; padding: 0 12px 12px 4px; }
+    }
+}
+
+.pagina-cadastro .conteudo {
+    max-width: 900px;
+
+    > h1 { margin-bottom: 16px; }
+    > p { max-width: 780px; }
+    #aviso-demonstracao {
+        margin: 24px 0 16px;
+        padding: 16px 20px;
+        background: #eaf6ee;
+        border-left: 4px solid $verde;
+        border-radius: 0 8px 8px 0;
+        color: $verde-escuro;
+        font-size: 0.9rem;
+    }
+
+    form { margin-top: 32px; }
+    fieldset {
+        @include painel;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        min-width: 0;
+        margin-bottom: 28px;
+
+        legend { padding: 0 12px; color: $verde-escuro; font-size: 1.15rem; }
+        p { min-width: 0; margin: 0; }
+        br { display: none; }
+        .campo-amplo { grid-column: 1 / -1; }
+    }
+
+    label { display: block; margin-bottom: 8px; color: $texto; font-size: 0.9rem; font-weight: 600; }
+    input:not([type="checkbox"]), select, textarea {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        min-height: 48px;
+        padding: 12px;
+        border: 1px solid $borda;
+        border-radius: 8px;
+        background: #fff;
+        color: $texto;
+        font: inherit;
+        font-size: 1rem;
+
+        &::placeholder { color: #6b7280; opacity: 1; }
+        &:focus-visible { @include foco-visivel; border-color: #2563eb; }
+        &:user-invalid { border: 2px solid #b91c1c; }
+    }
+    textarea { resize: vertical; min-height: 140px; }
+    small { display: block; margin-top: 8px; color: $texto-secundario; font-size: 0.8rem; line-height: 1.5; }
+
+    #colaboracao {
+        > p { grid-column: 1 / -1; }
+        .opcao-colaboracao {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            background: $fundo;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+
+            label { margin: 0; flex: 1; cursor: pointer; }
+            input { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; accent-color: $verde; cursor: pointer; }
+            input:focus-visible { @include foco-visivel; }
+        }
+    }
+    .acoes-formulario { margin-bottom: 12px; }
+    form > p:last-child { font-size: 0.85rem; }
+}
+
+@media (max-width: 700px) {
+    .pagina-interna {
+        .conteudo { width: calc(100% - 32px); margin: 28px auto 40px; }
+    }
+    .pagina-projetos .conteudo {
+        grid-template-columns: minmax(0, 1fr);
+        > section { padding: 24px; }
+        #como-doar ol { columns: 1; }
+    }
+    .pagina-cadastro .conteudo fieldset {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 24px 16px;
+        legend { font-size: 1rem; }
+    }
+    .pagina-interna .botao { width: 100%; }
 }

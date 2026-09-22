@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro | ReciclaTech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <a href="#conteudo">Ir para o conteúdo</a>
+<body class="pagina-interna pagina-cadastro">
+    <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
     <header>
-        <a href="index.html"><img src="image/Logo.png" alt="ReciclaTech" width="200" height="40"></a>
-        <nav aria-label="Navegação principal">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
-            </ul>
+        <img src="./image/Logo.png" alt="Logo">
+        <nav class="container-menu" aria-label="Navegação principal">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
+        <a href="cadastro.html">Começar agora</a>
         </nav>
     </header>
-    <main id="conteudo" class="function">
+    <main id="conteudo" class="conteudo">
         <h1>Cadastro de colaboradores</h1>
         <p>Participe das iniciativas da ReciclaTech. Os campos identificados como obrigatórios devem ser preenchidos.</p>
         <p id="aviso-demonstracao">Formulário acadêmico: use dados fictícios. Esta versão permite testar as validações, mas não salva nem envia cadastros.</p>
@@ -28,7 +35,7 @@
         <form method="dialog" aria-describedby="aviso-demonstracao">
             <fieldset>
                 <legend>Dados pessoais</legend>
-                <p>
+                <p class="campo-amplo">
                     <label for="nome">Nome completo (obrigatório)</label><br>
                     <input type="text" id="nome" name="nome" autocomplete="name" required minlength="3" maxlength="120" pattern="\S+(?:\s+\S+)+" title="Informe pelo menos dois nomes, separados por espaço.">
                 </p>
@@ -61,7 +68,7 @@
                     <input type="text" id="cep" name="cep" autocomplete="postal-code" required minlength="9" maxlength="9" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000" title="Digite o CEP no formato 00000-000." aria-describedby="ajuda-cep">
                     <small id="ajuda-cep">Formato: 00000-000.</small>
                 </p>
-                <p>
+                <p class="campo-amplo">
                     <label for="logradouro">Logradouro (obrigatório)</label><br>
                     <input type="text" id="logradouro" name="logradouro" autocomplete="address-line1" required maxlength="150" pattern=".*\S.*">
                 </p>
@@ -119,28 +126,55 @@
             <fieldset id="colaboracao">
                 <legend>Como deseja colaborar</legend>
                 <p>Selecione uma ou mais opções, se desejar.</p>
-                <p><input type="checkbox" id="doacao-financeira" name="colaboracao" value="doacao-financeira"> <label for="doacao-financeira">Tenho interesse em contribuir financeiramente</label></p>
-                <p><input type="checkbox" id="doacao-equipamentos" name="colaboracao" value="doacao-equipamentos"> <label for="doacao-equipamentos">Quero doar equipamentos</label></p>
-                <p><input type="checkbox" id="voluntariado" name="colaboracao" value="voluntariado"> <label for="voluntariado">Quero realizar trabalho voluntário</label></p>
-                <p>
+                <p class="opcao-colaboracao"><input type="checkbox" id="doacao-financeira" name="colaboracao" value="doacao-financeira"> <label for="doacao-financeira">Tenho interesse em contribuir financeiramente</label></p>
+                <p class="opcao-colaboracao"><input type="checkbox" id="doacao-equipamentos" name="colaboracao" value="doacao-equipamentos"> <label for="doacao-equipamentos">Quero doar equipamentos</label></p>
+                <p class="opcao-colaboracao"><input type="checkbox" id="voluntariado" name="colaboracao" value="voluntariado"> <label for="voluntariado">Quero realizar trabalho voluntário</label></p>
+                <p class="campo-amplo">
                     <label for="mensagem">Interesses, habilidades e disponibilidade (opcional)</label><br>
                     <textarea id="mensagem" name="mensagem" rows="5" cols="30" maxlength="1000" aria-describedby="ajuda-mensagem"></textarea>
                     <small id="ajuda-mensagem">Descreva como gostaria de colaborar. Limite de 1.000 caracteres.</small>
                 </p>
             </fieldset>
-            <p><button type="submit">Validar preenchimento</button></p>
+            <p class="acoes-formulario"><button class="botao" type="submit">Validar preenchimento</button></p>
             <p>O navegador indica os campos inválidos. Se estiverem corretos, você permanece nesta página, sem envio ou confirmação de cadastro.</p>
         </form>
     </main>
-    <footer>
-        <p>ReciclaTech — tecnologia, solidariedade e sustentabilidade.</p>
-        <nav aria-label="Navegação do rodapé">
+    <footer id="contato">
+        <div class="rodape">
+            <div>
+            <img class="logo_branco" src="./image/logo_branco.png" alt="logo">
+            <p>Conectando pessoas através da sustentabilidade e tecnologia</p>
+            </div>
+            <div>
+            <h5>Links rápidos</h5>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="index.html#como-funciona">Como funciona</a></li>
+            <li><a href="projetos.html#como-doar">Doar</a></li>
+            <li><a href="index.html#produtos">Adquirir</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
-        </nav>
+            </div>
+            <div>
+            <h5>Participação</h5>
+            <ul>
+            <li> <a href="projetos.html">Projetos</a></li>
+            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+            <li><a href="projetos.html#campanhas">Campanhas</a></li>
+            <li><a href="cadastro.html">Participar</a></li>
+            </ul>
+            </div>
+            <div>
+            <h5>Redes Sociais</h5>
+            <p>Siga-nos para novidades e dicas de sustentabilidade!</p>
+            <div class="redes-sociais">
+                <img src="./image/icon_facebook.png" alt="icone Facebook">
+                <img src="./image/icon_email.png" alt="icone email">
+                <img src="./image/icon_Twitter.png" alt="icone Twitter">
+            </div>
+            </div>
+        </div>
+
+        <p>© 2025 ReciclaTech. Todos os direitos reservados. Feito com 💚 para um mundo melhor.</p>
     </footer>
 </body>
 </html>

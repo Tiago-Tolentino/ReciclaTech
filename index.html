@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,14 +19,14 @@
 <body>
     <header>
         <img src="./image/Logo.png" alt="Logo">
-        <div class="container-menu">
+        <nav class="container-menu" aria-label="Navegação principal">
         <ul>
-            <li><a href="#">Como Funciona</a></li>
-            <li><a href="#">Doar</a></li>
-            <li><a href="#">Adquirir</a></li>
+            <li><a href="index.html" aria-current="page">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
         </ul>
-        <button type="button">Comecar Agora</button>
-        </div>
+        <a href="cadastro.html">Começar agora</a>
+        </nav>
     </header>
     <main>
     <section class="introducao">
@@ -34,13 +34,13 @@
         <h1>Dê uma segunda vida aos seus eletrônicos!</h1>
         <h2>Conectamos pessoas que querem doar eletrônicos em bom estado com quem precisa deles. Simples, gratuito e sustentável!</h2>
             <div class="botoes">
-            <button id="doar" type="submit">Quero doar <img src="./image/Icone de presente.png" alt="Icone de presente"></button>
-            <button id="adquirir" type="button">Quero Adquirir <img src="./image/icone de coracao azul.png" alt="Icone de coracao"></button>
+            <a id="doar" href="projetos.html#como-doar">Quero doar <img src="./image/Icone%20de%20presente.png" alt=""></a>
+            <a id="adquirir" href="#produtos">Quero Adquirir <img src="./image/icone%20de%20coracao%20azul.png" alt=""></a>
             </div>
         </div>
         <img class="reciclagem-inicio" src="./image/reciclagem.png" alt="simbolo de reciclagem com eletronicos">
     </section>
-    <section class="dados">
+    <section class="dados" aria-label="Resultados da comunidade">
         <div>
             <h2>2.5K+</h2>
             <p>Eletrônicos doados</p>
@@ -54,13 +54,13 @@
             <p>Satisfacao dos usuários</p>
         </div>
     </section>
-    <section class="function">
+    <section class="function" id="como-funciona">
         <h2>Como funciona?</h2>
         <h3>É mais fácil que trocar a pilha do controle!</h3>
     </section>
-    <section class="beneficios">
+    <section class="beneficios" aria-label="Orientações para doadores e adquirentes">
         <div class="doadores">
-            <h3><img src="./image/presente com fundo.png" alt="icone de presente com fundo verde">Para Doadores</h3>
+            <h3><img src="./image/presente%20com%20fundo.png" alt="icone de presente com fundo verde">Para Doadores</h3>
             <h4>Transforme seu "lixo eletrônico" no tesouro de alguém</h4>
             <ol>
                 <li>Cadastre seu eletrônico
@@ -75,7 +75,7 @@
             </ol>
         </div>
         <div class="adquirentes">
-            <h3><img src="./image/coracao com fundo.png" alt="Imageem de coracao com fundo azul">Para Adquirentes</h3>
+            <h3><img src="./image/coracao%20com%20fundo.png" alt="Imageem de coracao com fundo azul">Para Adquirentes</h3>
             <h4>Encontre o letrônico dos seus sonhos de graca</h4>
             <ol>
                 <li>Explore os itens
@@ -91,7 +91,7 @@
         </div>
     </section>
 
-    <section class="disponiveis">
+    <section class="disponiveis" id="produtos">
         <div class="title-produtos">
         <h2>Produtos disponiveis</h2>
         <h3>Categorias mais populares</h3>
@@ -101,19 +101,19 @@
                 <img src="./image/Fone.png" alt="fone de ouvido">
                 <h4>Fones</h4>
                 <p>Fones em ótimo estado, prontos para uso</p>
-                <button type="button">Quero adquirir</button>
+                <a href="cadastro.html">Quero adquirir</a>
             </div>
             <div class="notebooks">
                 <img src="./image/Notebook.png" alt="notebook">
                 <h4>Notebooks</h4>
                 <p>Notebooks funcionando direitinho, prontos pra você usar.</p>
-                <button type="button">Quero adquirir</button>
+                <a href="cadastro.html">Quero adquirir</a>
             </div>
             <div class="smartphones">
                 <img src="./image/Smartphones.png" alt="smartphones">
                 <h4>Smartphones</h4>
                 <p>Celulares em ótimo estado, prontos para uma nova jornada</p>
-                <button type="button">Quero adquirir</button>
+                <a href="cadastro.html">Quero adquirir</a>
             </div>
         </div>
     </section>
@@ -161,30 +161,33 @@
         <h2>Pronto para fazer a diferenca?</h2>
         <h3>Junte-se à nossa comunidade e ajude a criar um mundo mais sustentável, um eletrônico de cada vez!</h3>
         <div class="btn">
-            <button class="comecar" type="button">Comecar Agora</button>
-            <button class="mais" type="button">Saiba Mais</button>
+            <a class="comecar" href="cadastro.html">Começar agora</a>
+            <a class="mais" href="projetos.html">Saiba mais</a>
         </div>
     </section>
-    <footer>
+    </main>
+    <footer id="contato">
         <div class="rodape">
             <div>
             <img class="logo_branco" src="./image/logo_branco.png" alt="logo">
             <p>Conectando pessoas através da sustentabilidade e tecnologia</p>
             </div>
             <div>
-            <ul><h5>Links Rapidos</h5>
-            <li><a href="#">Como Funciona</a></li>
-            <li><a href="#">Doar</a></li>
-            <li><a href="#">Adquirir</a></li>
-            <li><a href="#">Contato</a></li>
+            <h5>Links rápidos</h5>
+            <ul>
+            <li><a href="index.html#como-funciona">Como funciona</a></li>
+            <li><a href="projetos.html#como-doar">Doar</a></li>
+            <li><a href="index.html#produtos">Adquirir</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
             </div>
             <div>
-            <ul><h5>Suporte</h5>
-            <li> <a href="#">FAQ</a></li>
-            <li><a href="#">Termos de Uso</a></li>
-            <li><a href="#">Privacidade</a></li>
-            <li><a href="#">Ajuda</a></li>
+            <h5>Participação</h5>
+            <ul>
+            <li> <a href="projetos.html">Projetos</a></li>
+            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+            <li><a href="projetos.html#campanhas">Campanhas</a></li>
+            <li><a href="cadastro.html">Participar</a></li>
             </ul>
             </div>
             <div>
@@ -200,6 +203,5 @@
         
         <p>© 2025 ReciclaTech. Todos os direitos reservados. Feito com 💚 para um mundo melhor.</p>
     </footer>
-    </main>
 </body>
 </html>

@@ -1,3 +1,13 @@
+// Grade estrutural compartilhada por todas as páginas.
+$colunas-grid: 12;
+$espaco-grid: 24px;
+
+@mixin grade-12 {
+    display: grid;
+    grid-template-columns: repeat($colunas-grid, minmax(0, 1fr));
+    gap: $espaco-grid;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -765,11 +775,10 @@ button:focus-visible { @include foco-visivel; }
 }
 
 .pagina-projetos .conteudo {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    @include grade-12;
 
     > section {
+        grid-column: span 6;
         @include painel;
         min-width: 0;
 
@@ -823,7 +832,11 @@ button:focus-visible { @include foco-visivel; }
 }
 
 .pagina-cadastro .conteudo {
+    @include grade-12;
+    row-gap: 0;
     max-width: 900px;
+
+    > * { grid-column: 1 / -1; min-width: 0; }
 
     > h1 { margin-bottom: 16px; }
     > p { max-width: 780px; }
@@ -840,14 +853,12 @@ button:focus-visible { @include foco-visivel; }
     form { margin-top: 32px; }
     fieldset {
         @include painel;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
+        @include grade-12;
         min-width: 0;
         margin-bottom: 28px;
 
         legend { padding: 0 12px; color: $verde-escuro; font-size: 1.15rem; }
-        p { min-width: 0; margin: 0; }
+        p { grid-column: span 6; min-width: 0; margin: 0; }
         br { display: none; }
         .campo-amplo { grid-column: 1 / -1; }
     }
@@ -893,19 +904,238 @@ button:focus-visible { @include foco-visivel; }
     form > p:last-child { font-size: 0.85rem; }
 }
 
+// A página inicial também utiliza a grade para organizar suas seções.
+body:not(.pagina-interna) > main {
+    @include grade-12;
+    gap: 0;
+    > section { grid-column: 1 / -1; min-width: 0; }
+}
+
+// Grade comum do rodapé: quatro blocos no desktop e empilhamento responsivo.
+footer .rodape {
+    @include grade-12;
+    width: min(1120px, 100%);
+    > div { grid-column: span 3; min-width: 0; }
+    ul { width: 100%; }
+}
+
+@media (max-width: 1000px) {
+    footer .rodape > div { grid-column: span 6; }
+}
+
+@media (max-width: 800px) {
+    footer .rodape > div { grid-column: 1 / -1; }
+    .beneficios .doadores, .beneficios .adquirentes {
+        width: min(400px, calc(100% - 32px));
+        height: auto;
+        min-height: 400px;
+    }
+}
+
 @media (max-width: 700px) {
+    .saiba-mais .btn { flex-wrap: wrap; justify-content: center; }
+    .introducao .reciclagem-inicio,
+    .disponiveis .produtos > div { max-width: 100%; }
+
     .pagina-interna {
         .conteudo { width: calc(100% - 32px); margin: 28px auto 40px; }
     }
     .pagina-projetos .conteudo {
-        grid-template-columns: minmax(0, 1fr);
-        > section { padding: 24px; }
+        column-gap: 8px;
+        > section { grid-column: 1 / -1; padding: 24px; }
         #como-doar ol { columns: 1; }
     }
     .pagina-cadastro .conteudo fieldset {
-        grid-template-columns: minmax(0, 1fr);
+        column-gap: 8px;
         padding: 24px 16px;
+        > p { grid-column: 1 / -1; }
         legend { font-size: 1rem; }
     }
     .pagina-interna .botao { width: 100%; }
+}
+
+// Quinto breakpoint: aproveita telas panorâmicas sem alongar os textos.
+@media (min-width: 1440px) {
+    header,
+    body:not(.pagina-interna) > main {
+        max-width: 1360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .pagina-interna .conteudo { width: min(1280px, calc(100% - 96px)); }
+    .pagina-projetos .conteudo {
+        gap: 32px;
+        #voluntariado { grid-column: span 5; }
+        #campanhas { grid-column: span 7; }
+    }
+    .pagina-cadastro .conteudo { max-width: 1040px; }
+    .pagina-cadastro .conteudo fieldset { gap: 32px; }
+    footer .rodape { max-width: 1280px; gap: 32px; }
+}
+
+// Navegação compartilhada: dropdown nativo e botão móvel acessível.
+.cabecalho {
+    position: relative;
+    z-index: 5;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #fff;
+
+    [hidden] { display: none !important; }
+    .container-menu { flex-direction: row; }
+    .menu-lista { gap: 24px; }
+    .menu-lista > li > a,
+    summary {
+        display: block;
+        padding: 12px 4px;
+        color: $texto-secundario;
+        font: 400 1rem "Poppins", sans-serif;
+        cursor: pointer;
+    }
+    a[aria-current="page"], summary:hover { color: $verde-escuro; }
+    summary:focus-visible { @include foco-visivel; }
+    summary { list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: " ▾"; }
+    .menu-dropdown { position: relative; }
+    .menu-dropdown[open] > summary::after { content: " ▴"; }
+    .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 250px;
+        padding: 8px;
+        border: 1px solid $borda;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 8px 24px #1f29371a;
+        list-style: none;
+        text-align: left;
+
+        a { display: block; padding: 12px; border-radius: 4px; }
+        a:hover, a:focus-visible { background: #eaf6ee; color: $verde-escuro; }
+    }
+    .menu-dropdown[open] > .submenu { display: block; }
+    .menu-toggle {
+        width: auto;
+        min-height: 44px;
+        gap: 10px;
+        padding: 10px 14px;
+        background: $verde;
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .cabecalho {
+        gap: 12px;
+        .container-menu {
+            flex-basis: 100%;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 12px;
+            padding: 12px 0;
+        }
+        .menu-lista { flex-direction: column; align-items: stretch; gap: 4px; text-align: left; }
+        .menu-lista > li > a, summary { padding: 12px; }
+        .submenu { position: static; width: 100%; box-shadow: none; }
+    }
+}
+
+
+// Feedback reutilizável: os textos e símbolos complementam as cores.
+$feedback-sucesso: #166534;
+$feedback-erro: #991b1b;
+$feedback-aviso: #854d0e;
+$feedback-informacao: #1e40af;
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font: 600 0.8rem/1.5 "Inter", sans-serif;
+    &--sucesso { color: $feedback-sucesso; background: #dcfce7; }
+    &--informacao { color: $feedback-informacao; background: #dbeafe; }
+    &--aviso { color: $feedback-aviso; background: #fef9c3; }
+    &--neutro { color: $texto-secundario; background: #e5e7eb; }
+}
+.alerta {
+    padding: 16px 20px;
+    border: 1px solid;
+    border-left-width: 4px;
+    border-radius: 8px;
+    font: 400 0.9rem/1.6 "Inter", sans-serif;
+    strong { display: block; margin-bottom: 4px; }
+    &--sucesso { color: $feedback-sucesso; background: #f0fdf4; border-color: #86efac; }
+    &--erro { color: $feedback-erro; background: #fef2f2; border-color: #fca5a5; }
+    &--aviso { color: $feedback-aviso; background: #fefce8; border-color: #fde047; }
+    &--informacao { color: $feedback-informacao; background: #eff6ff; border-color: #93c5fd; }
+}
+.feedback-botao {
+    min-height: 48px;
+    padding: 12px 20px;
+    border: 1px solid $verde;
+    border-radius: 8px;
+    color: #fff;
+    background: $verde;
+    font: 600 0.9rem/1.5 "Inter", sans-serif;
+    cursor: pointer;
+    &:hover { background: $verde-escuro; }
+    &:active { transform: translateY(1px); }
+    &:disabled { opacity: 0.5; cursor: not-allowed; }
+    &--secundario { background: #fff; color: $verde-escuro; &:hover { background: #eaf6ee; } }
+}
+.feedback-acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.toast {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 20;
+    align-items: flex-start;
+    gap: 20px;
+    width: min(440px, calc(100% - 32px));
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #86efac;
+    border-left: 5px solid $verde;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px #1f293733;
+    color: $feedback-sucesso;
+    font: 500 0.95rem/1.6 "Inter", sans-serif;
+    margin: 0;
+    inset: auto 24px 24px auto;
+    &:popover-open { display: flex; }
+    button { flex-shrink: 0; width: 44px; height: 44px; border: 0; border-radius: 6px; background: #f0fdf4; color: $verde-escuro; font-size: 1.5rem; cursor: pointer; }
+}
+
+// Menu móvel nativo: o navegador gerencia abertura, teclado e semântica.
+.cabecalho {
+    .menu-movel { display: none; }
+    .menu-movel > summary { color: #fff; border-radius: 8px; }
+    .menu-movel > summary::after { content: none; }
+}
+@media (max-width: 800px) {
+    .cabecalho {
+        .menu-desktop { display: none; }
+        .menu-movel { display: block; margin-left: auto; }
+        .menu-movel[open] { flex-basis: 100%; }
+        .menu-movel > summary { width: max-content; margin-left: auto; }
+    }
+}
+.pagina-interna .alerta p { color: inherit; }
+.pagina-projetos .badge { margin-bottom: 12px; }
+.pagina-projetos .toast p { color: inherit; font-size: 0.9rem; margin-top: 8px; }
+.resumo-erros { display: none; margin-bottom: 24px; }
+form:has(:user-invalid) > .resumo-erros { display: block; }
+.pagina-cadastro .conteudo {
+    .feedback-campo { display: none; }
+    input:user-invalid ~ .feedback-campo--erro { display: block; color: $feedback-erro; }
+    input:user-valid ~ .feedback-campo--sucesso { display: block; color: $feedback-sucesso; }
+    input:user-valid { border-color: $feedback-sucesso; }
+}
+@media (max-width: 700px) {
+    .toast { inset: auto 16px 16px auto; }
 }

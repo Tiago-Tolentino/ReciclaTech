@@ -10,29 +10,61 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="pagina-interna pagina-cadastro">
     <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
-    <header>
-        <img src="./image/Logo.png" alt="Logo">
-        <nav class="container-menu" aria-label="Navegação principal">
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
-        </ul>
-        <a href="cadastro.html">Começar agora</a>
+    <header class="cabecalho">
+        <a href="index.html" aria-label="ReciclaTech — início"><img src="../imagens/Logo.png" alt="ReciclaTech"></a>
+        <nav id="menu-principal" class="container-menu menu-desktop" aria-label="Navegação principal">
+            <ul class="menu-lista">
+                <li><a href="index.html">Início</a></li>
+                <li>
+                    <details class="menu-dropdown">
+                        <summary>Projetos</summary>
+                        <ul class="submenu">
+                            <li><a href="projetos.html">Todos os projetos</a></li>
+                            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+                            <li><a href="projetos.html#campanhas">Campanhas de doação</a></li>
+                            <li><a href="projetos.html#como-doar">Como doar</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+            </ul>
+            <a href="cadastro.html">Começar agora</a>
         </nav>
+        <details class="menu-movel">
+            <summary class="menu-toggle"><span aria-hidden="true">☰</span> Menu</summary>
+        <nav id="menu-movel" class="container-menu" aria-label="Navegação principal">
+            <ul class="menu-lista">
+                <li><a href="index.html">Início</a></li>
+                <li>
+                    <details class="menu-dropdown">
+                        <summary>Projetos</summary>
+                        <ul class="submenu">
+                            <li><a href="projetos.html">Todos os projetos</a></li>
+                            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+                            <li><a href="projetos.html#campanhas">Campanhas de doação</a></li>
+                            <li><a href="projetos.html#como-doar">Como doar</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+            </ul>
+            <a href="cadastro.html">Começar agora</a>
+        </nav>
+        </details>
     </header>
     <main id="conteudo" class="conteudo">
         <h1>Cadastro de colaboradores</h1>
         <p>Participe das iniciativas da ReciclaTech. Os campos identificados como obrigatórios devem ser preenchidos.</p>
-        <p id="aviso-demonstracao">Formulário acadêmico: use dados fictícios. Esta versão permite testar as validações, mas não salva nem envia cadastros.</p>
+        <div id="aviso-demonstracao" class="alerta alerta--informacao"><strong>Cadastro em versão acadêmica</strong><p>Use dados fictícios. Você pode validar o preenchimento, mas os dados ainda não são enviados ou salvos.</p></div>
         <p>Digite CPF, telefone e CEP com a pontuação indicada. O HTML verifica o formato, mas não adiciona os sinais automaticamente.</p>
         <!-- method="dialog" permite validar sem transmitir os dados.
              Para um cadastro real, integrar um servidor e usar method="post" com action apropriado. -->
         <form method="dialog" aria-describedby="aviso-demonstracao">
+            <div class="alerta alerta--erro resumo-erros"><strong>Revise os campos destacados</strong><p>Há campos obrigatórios vazios ou valores fora do formato solicitado. Confira as orientações de cada campo.</p></div>
             <fieldset>
                 <legend>Dados pessoais</legend>
                 <p class="campo-amplo">
@@ -59,6 +91,8 @@
                     <label for="telefone">Telefone com DDD (obrigatório)</label><br>
                     <input type="tel" id="telefone" name="telefone" autocomplete="tel-national" required minlength="14" maxlength="15" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" placeholder="(11) 91234-5678" title="Use (11) 1234-5678 ou (11) 91234-5678." aria-describedby="ajuda-telefone">
                     <small id="ajuda-telefone">Formatos: (11) 1234-5678 ou (11) 91234-5678.</small>
+                    <small class="feedback-campo feedback-campo--erro">Telefone inválido. Inclua DDD, espaço e hífen conforme o exemplo.</small>
+                    <small class="feedback-campo feedback-campo--sucesso">Formato do telefone válido.</small>
                 </p>
             </fieldset>
             <fieldset>
@@ -142,7 +176,7 @@
     <footer id="contato">
         <div class="rodape">
             <div>
-            <img class="logo_branco" src="./image/logo_branco.png" alt="logo">
+            <img class="logo_branco" src="../imagens/logo_branco.png" alt="logo">
             <p>Conectando pessoas através da sustentabilidade e tecnologia</p>
             </div>
             <div>
@@ -167,9 +201,9 @@
             <h5>Redes Sociais</h5>
             <p>Siga-nos para novidades e dicas de sustentabilidade!</p>
             <div class="redes-sociais">
-                <img src="./image/icon_facebook.png" alt="icone Facebook">
-                <img src="./image/icon_email.png" alt="icone email">
-                <img src="./image/icon_Twitter.png" alt="icone Twitter">
+                <img src="../imagens/icon_facebook.png" alt="icone Facebook">
+                <img src="../imagens/icon_email.png" alt="icone email">
+                <img src="../imagens/icon_Twitter.png" alt="icone Twitter">
             </div>
             </div>
         </div>

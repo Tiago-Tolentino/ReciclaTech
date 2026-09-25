@@ -10,20 +10,51 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="pagina-interna pagina-projetos">
     <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
-    <header>
-        <img src="./image/Logo.png" alt="Logo">
-        <nav class="container-menu" aria-label="Navegação principal">
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html" aria-current="page">Projetos</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-        </ul>
-        <a href="cadastro.html">Começar agora</a>
+    <header class="cabecalho">
+        <a href="index.html" aria-label="ReciclaTech — início"><img src="../imagens/Logo.png" alt="ReciclaTech"></a>
+        <nav id="menu-principal" class="container-menu menu-desktop" aria-label="Navegação principal">
+            <ul class="menu-lista">
+                <li><a href="index.html">Início</a></li>
+                <li>
+                    <details class="menu-dropdown">
+                        <summary>Projetos</summary>
+                        <ul class="submenu">
+                            <li><a href="projetos.html" aria-current="page">Todos os projetos</a></li>
+                            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+                            <li><a href="projetos.html#campanhas">Campanhas de doação</a></li>
+                            <li><a href="projetos.html#como-doar">Como doar</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+            <a href="cadastro.html">Começar agora</a>
         </nav>
+        <details class="menu-movel">
+            <summary class="menu-toggle"><span aria-hidden="true">☰</span> Menu</summary>
+        <nav id="menu-movel" class="container-menu" aria-label="Navegação principal">
+            <ul class="menu-lista">
+                <li><a href="index.html">Início</a></li>
+                <li>
+                    <details class="menu-dropdown">
+                        <summary>Projetos</summary>
+                        <ul class="submenu">
+                            <li><a href="projetos.html" aria-current="page">Todos os projetos</a></li>
+                            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+                            <li><a href="projetos.html#campanhas">Campanhas de doação</a></li>
+                            <li><a href="projetos.html#como-doar">Como doar</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+            <a href="cadastro.html">Começar agora</a>
+        </nav>
+        </details>
     </header>
     <main id="conteudo" class="conteudo">
         <section class="apresentacao" aria-labelledby="titulo-projetos">
@@ -38,6 +69,7 @@
             </nav>
         </section>
         <section id="voluntariado" aria-labelledby="titulo-voluntariado">
+            <span class="badge badge--informacao">Voluntariado</span>
             <h2 id="titulo-voluntariado">Trabalho voluntário</h2>
             <p>Colabore com seu tempo e conhecimento para ampliar o acesso à tecnologia.</p>
             <ul>
@@ -52,14 +84,16 @@
         <section id="campanhas" aria-labelledby="titulo-campanhas">
             <h2 id="titulo-campanhas">Campanhas de doação</h2>
             <article>
+                <span class="badge badge--sucesso">Reutilização de eletrônicos</span>
                 <h3>Eletrônicos com uma nova história</h3>
                 <p>A doação de computadores, celulares e acessórios em condições de uso ajuda pessoas que precisam desses recursos para estudar e se comunicar.</p>
                 <p>Informe o estado do equipamento e seus acessórios. Antes da entrega, faça uma cópia dos seus arquivos e remova seus dados pessoais.</p>
             </article>
             <article>
+                <span class="badge badge--neutro">Contribuição financeira</span>
                 <h3>Apoio financeiro à inclusão digital</h3>
                 <p>As contribuições financeiras podem apoiar a manutenção de equipamentos, a compra de peças e o transporte das doações.</p>
-                <p>Este projeto acadêmico ainda não disponibiliza pagamentos. Não há chave Pix, conta bancária ou cobrança nesta página.</p>
+                <div class="alerta alerta--aviso"><strong>Pagamentos ainda indisponíveis</strong><p>Esta versão acadêmica não recebe valores. Não há chave Pix ou cobrança nesta página.</p></div>
                 <p>Você pode indicar seu interesse em contribuir no <a href="cadastro.html#colaboracao">formulário de participação</a>.</p>
             </article>
         </section>
@@ -72,13 +106,20 @@
                 <li>Quando o atendimento estiver disponível, combine a entrega ou solicite os meios oficiais de contribuição antes de realizar qualquer pagamento.</li>
             </ol>
             <p>O cadastro desta versão é demonstrativo e ainda não registra solicitações.</p>
-            <a class="botao" href="cadastro.html">Acessar cadastro</a>
+            <div class="feedback-acoes">
+                <a class="botao" href="cadastro.html">Acessar cadastro</a>
+                <button class="feedback-botao feedback-botao--secundario" type="button" popovertarget="aviso-doacao">Antes de doar</button>
+            </div>
+            <aside class="toast" id="aviso-doacao" popover aria-labelledby="titulo-aviso-doacao">
+                <div><strong id="titulo-aviso-doacao">Prepare seu equipamento</strong><p>Faça uma cópia dos seus arquivos e remova seus dados pessoais antes da entrega.</p></div>
+                <button type="button" popovertarget="aviso-doacao" popovertargetaction="hide" aria-label="Fechar orientação">×</button>
+            </aside>
         </section>
     </main>
     <footer id="contato">
         <div class="rodape">
             <div>
-            <img class="logo_branco" src="./image/logo_branco.png" alt="logo">
+            <img class="logo_branco" src="../imagens/logo_branco.png" alt="logo">
             <p>Conectando pessoas através da sustentabilidade e tecnologia</p>
             </div>
             <div>
@@ -103,9 +144,9 @@
             <h5>Redes Sociais</h5>
             <p>Siga-nos para novidades e dicas de sustentabilidade!</p>
             <div class="redes-sociais">
-                <img src="./image/icon_facebook.png" alt="icone Facebook">
-                <img src="./image/icon_email.png" alt="icone email">
-                <img src="./image/icon_Twitter.png" alt="icone Twitter">
+                <img src="../imagens/icon_facebook.png" alt="icone Facebook">
+                <img src="../imagens/icon_email.png" alt="icone email">
+                <img src="../imagens/icon_Twitter.png" alt="icone Twitter">
             </div>
             </div>
         </div>

@@ -1077,7 +1077,7 @@ footer .rodape ul {
   font: 400 1rem "Poppins", sans-serif;
   cursor: pointer;
 }
-.cabecalho a[aria-current=page], .cabecalho summary:hover {
+.cabecalho .menu-lista a[aria-current=page], .cabecalho summary:hover {
   color: #166534;
 }
 .cabecalho summary:focus-visible {
@@ -1354,6 +1354,12 @@ form:has(:user-invalid) > .resumo-erros {
   .toast {
     inset: auto 16px 16px auto;
   }
+}
+.pagina-cadastro .conteudo #retorno-formulario {
+  margin: 16px 0;
+}
+.pagina-cadastro .conteudo #retorno-formulario[hidden] {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

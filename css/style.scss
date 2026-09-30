@@ -992,7 +992,7 @@ footer .rodape {
         font: 400 1rem "Poppins", sans-serif;
         cursor: pointer;
     }
-    a[aria-current="page"], summary:hover { color: $verde-escuro; }
+    .menu-lista a[aria-current="page"], summary:hover { color: $verde-escuro; }
     summary:focus-visible { @include foco-visivel; }
     summary { list-style: none; }
     summary::-webkit-details-marker { display: none; }
@@ -1138,4 +1138,10 @@ form:has(:user-invalid) > .resumo-erros { display: block; }
 }
 @media (max-width: 700px) {
     .toast { inset: auto 16px 16px auto; }
+}
+
+// Resultado da última tentativa de validação do formulário.
+.pagina-cadastro .conteudo #retorno-formulario {
+    margin: 16px 0;
+    &[hidden] { display: none; }
 }

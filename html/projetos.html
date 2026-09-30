@@ -11,60 +11,61 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="../js/app.js"></script>
 </head>
-<body class="pagina-interna pagina-projetos">
-    <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
+<body class="pagina-interna pagina-projetos" data-pagina="projetos">
+    <a class="pular-conteudo" href="#/projetos">Ir para o conteúdo</a>
     <header class="cabecalho">
-        <a href="index.html" aria-label="ReciclaTech — início"><img src="../imagens/Logo.png" alt="ReciclaTech"></a>
+        <a href="#/inicio" aria-label="ReciclaTech — início"><img src="../imagens/Logo.png" alt="ReciclaTech"></a>
         <nav id="menu-principal" class="container-menu menu-desktop" aria-label="Navegação principal">
             <ul class="menu-lista">
-                <li><a href="index.html">Início</a></li>
+                <li><a href="#/inicio">Início</a></li>
                 <li>
                     <details class="menu-dropdown">
                         <summary>Projetos</summary>
                         <ul class="submenu">
-                            <li><a href="projetos.html" aria-current="page">Todos os projetos</a></li>
-                            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
-                            <li><a href="projetos.html#campanhas">Campanhas de doação</a></li>
-                            <li><a href="projetos.html#como-doar">Como doar</a></li>
+                            <li><a href="#/projetos" aria-current="page">Todos os projetos</a></li>
+                            <li><a href="#/projetos/voluntariado">Voluntariado</a></li>
+                            <li><a href="#/projetos/campanhas">Campanhas de doação</a></li>
+                            <li><a href="#/projetos/como-doar">Como doar</a></li>
                         </ul>
                     </details>
                 </li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="#/cadastro">Cadastro</a></li>
             </ul>
-            <a href="cadastro.html">Começar agora</a>
+            <a href="#/cadastro">Começar agora</a>
         </nav>
         <details class="menu-movel">
             <summary class="menu-toggle"><span aria-hidden="true">☰</span> Menu</summary>
         <nav id="menu-movel" class="container-menu" aria-label="Navegação principal">
             <ul class="menu-lista">
-                <li><a href="index.html">Início</a></li>
+                <li><a href="#/inicio">Início</a></li>
                 <li>
                     <details class="menu-dropdown">
                         <summary>Projetos</summary>
                         <ul class="submenu">
-                            <li><a href="projetos.html" aria-current="page">Todos os projetos</a></li>
-                            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
-                            <li><a href="projetos.html#campanhas">Campanhas de doação</a></li>
-                            <li><a href="projetos.html#como-doar">Como doar</a></li>
+                            <li><a href="#/projetos" aria-current="page">Todos os projetos</a></li>
+                            <li><a href="#/projetos/voluntariado">Voluntariado</a></li>
+                            <li><a href="#/projetos/campanhas">Campanhas de doação</a></li>
+                            <li><a href="#/projetos/como-doar">Como doar</a></li>
                         </ul>
                     </details>
                 </li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="#/cadastro">Cadastro</a></li>
             </ul>
-            <a href="cadastro.html">Começar agora</a>
+            <a href="#/cadastro">Começar agora</a>
         </nav>
         </details>
     </header>
-    <main id="conteudo" class="conteudo">
+    <main id="app" tabindex="-1" class="conteudo">
         <section class="apresentacao" aria-labelledby="titulo-projetos">
             <h1 id="titulo-projetos">Projetos e formas de colaborar</h1>
             <p>A ReciclaTech promove a reutilização de eletrônicos e a inclusão digital. Conheça nossas frentes de atuação e encontre uma forma de participar.</p>
             <nav aria-label="Assuntos desta página">
                 <ul>
-                    <li><a href="#voluntariado">Trabalho voluntário</a></li>
-                    <li><a href="#campanhas">Campanhas de doação</a></li>
-                    <li><a href="#como-doar">Como doar</a></li>
+                    <li><a href="#/projetos/voluntariado">Trabalho voluntário</a></li>
+                    <li><a href="#/projetos/campanhas">Campanhas de doação</a></li>
+                    <li><a href="#/projetos/como-doar">Como doar</a></li>
                 </ul>
             </nav>
         </section>
@@ -79,7 +80,7 @@
                 <li>Divulgação de campanhas e apoio na organização de entregas.</li>
             </ul>
             <p>No cadastro, marque a opção de voluntariado e informe suas habilidades e disponibilidade. A participação será combinada conforme as necessidades das atividades.</p>
-            <a class="botao" href="cadastro.html#colaboracao">Quero ser voluntário</a>
+            <a class="botao" href="#/cadastro/colaboracao">Quero ser voluntário</a>
         </section>
         <section id="campanhas" aria-labelledby="titulo-campanhas">
             <h2 id="titulo-campanhas">Campanhas de doação</h2>
@@ -94,7 +95,7 @@
                 <h3>Apoio financeiro à inclusão digital</h3>
                 <p>As contribuições financeiras podem apoiar a manutenção de equipamentos, a compra de peças e o transporte das doações.</p>
                 <div class="alerta alerta--aviso"><strong>Pagamentos ainda indisponíveis</strong><p>Esta versão acadêmica não recebe valores. Não há chave Pix ou cobrança nesta página.</p></div>
-                <p>Você pode indicar seu interesse em contribuir no <a href="cadastro.html#colaboracao">formulário de participação</a>.</p>
+                <p>Você pode indicar seu interesse em contribuir no <a href="#/cadastro/colaboracao">formulário de participação</a>.</p>
             </article>
         </section>
         <section id="como-doar" aria-labelledby="titulo-como-doar">
@@ -107,7 +108,7 @@
             </ol>
             <p>O cadastro desta versão é demonstrativo e ainda não registra solicitações.</p>
             <div class="feedback-acoes">
-                <a class="botao" href="cadastro.html">Acessar cadastro</a>
+                <a class="botao" href="#/cadastro">Acessar cadastro</a>
                 <button class="feedback-botao feedback-botao--secundario" type="button" popovertarget="aviso-doacao">Antes de doar</button>
             </div>
             <aside class="toast" id="aviso-doacao" popover aria-labelledby="titulo-aviso-doacao">
@@ -125,19 +126,19 @@
             <div>
             <h5>Links rápidos</h5>
             <ul>
-            <li><a href="index.html#como-funciona">Como funciona</a></li>
-            <li><a href="projetos.html#como-doar">Doar</a></li>
-            <li><a href="index.html#produtos">Adquirir</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="#/inicio/como-funciona">Como funciona</a></li>
+            <li><a href="#/projetos/como-doar">Doar</a></li>
+            <li><a href="#/inicio/produtos">Adquirir</a></li>
+            <li><a href="#/cadastro">Cadastro</a></li>
             </ul>
             </div>
             <div>
             <h5>Participação</h5>
             <ul>
-            <li> <a href="projetos.html">Projetos</a></li>
-            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
-            <li><a href="projetos.html#campanhas">Campanhas</a></li>
-            <li><a href="cadastro.html">Participar</a></li>
+            <li> <a href="#/projetos">Projetos</a></li>
+            <li><a href="#/projetos/voluntariado">Voluntariado</a></li>
+            <li><a href="#/projetos/campanhas">Campanhas</a></li>
+            <li><a href="#/cadastro">Participar</a></li>
             </ul>
             </div>
             <div>

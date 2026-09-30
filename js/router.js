@@ -11,7 +11,8 @@ export function iniciarNavegacao(paginas) {
         const rota = partes[0] || document.body.dataset.pagina;
         const secao = partes[1];
 
-        if (!paginas[rota]) {
+        // Aceita somente os nomes das páginas cadastradas.
+        if (!Object.keys(paginas).includes(rota)) {
             location.replace('#/inicio');
             return;
         }

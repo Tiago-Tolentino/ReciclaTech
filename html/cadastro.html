@@ -60,7 +60,7 @@
     <main id="app" tabindex="-1" class="conteudo">
         <h1>Cadastro de colaboradores</h1>
         <p>Participe das iniciativas da ReciclaTech. Os campos identificados como obrigatórios devem ser preenchidos.</p>
-        <div id="aviso-demonstracao" class="alerta alerta--informacao"><strong>Cadastro em versão acadêmica</strong><p>Use dados fictícios. Você pode validar o preenchimento, mas os dados ainda não são enviados ou salvos.</p></div>
+        <div id="aviso-demonstracao" class="alerta alerta--informacao"><strong>Cadastro em versão acadêmica</strong><p>Use dados fictícios. Ao validar, somente suas opções de colaboração são salvas neste navegador. Seus dados pessoais não são salvos nem enviados.</p></div>
         <p>Digite CPF, telefone e CEP com a pontuação indicada. O HTML verifica o formato, mas não adiciona os sinais automaticamente.</p>
         <!-- method="dialog" permite validar sem transmitir os dados.
              Para um cadastro real, integrar um servidor e usar method="post" com action apropriado. -->
@@ -158,7 +158,7 @@
             </fieldset>
             <fieldset id="colaboracao">
                 <legend>Como deseja colaborar</legend>
-                <p>Selecione uma ou mais opções, se desejar.</p>
+                <p>Selecione uma ou mais opções, se desejar. As escolhas salvas serão restauradas ao voltar. Para removê-las, desmarque todas e valide novamente.</p>
                 <p class="opcao-colaboracao"><input type="checkbox" id="doacao-financeira" name="colaboracao" value="doacao-financeira"> <label for="doacao-financeira">Tenho interesse em contribuir financeiramente</label></p>
                 <p class="opcao-colaboracao"><input type="checkbox" id="doacao-equipamentos" name="colaboracao" value="doacao-equipamentos"> <label for="doacao-equipamentos">Quero doar equipamentos</label></p>
                 <p class="opcao-colaboracao"><input type="checkbox" id="voluntariado" name="colaboracao" value="voluntariado"> <label for="voluntariado">Quero realizar trabalho voluntário</label></p>

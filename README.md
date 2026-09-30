@@ -39,4 +39,34 @@ sass --watch css/style.scss:css/style.css
 
 ## Etapa atual
 
-A SPA usa JavaScript modular e templates obtidos dos arquivos HTML. Menu e popover usam recursos nativos. O módulo `formulario.js` trata apenas `submit`, utilizando `preventDefault()` para impedir o envio e `reportValidity()` para verificar as restrições HTML. O localStorage será desenvolvido em uma próxima etapa. Ao trocar de página, o formulário ainda não preserva os dados digitados.
+A SPA usa JavaScript modular e templates obtidos dos arquivos HTML. Menu e popover usam recursos nativos. O módulo `formulario.js` trata apenas `submit`, utilizando `preventDefault()` para impedir o envio e `reportValidity()` para verificar as restrições HTML. Após uma validação bem-sucedida, `armazenamento.js` salva somente as opções de colaboração no localStorage, na chave `reciclatech.preferenciasColaboracao`, usando JSON. As opções são restauradas ao abrir o cadastro. Desmarcar todas e validar grava uma lista vazia. Dados pessoais não são armazenados. Falhas de leitura ou gravação exibem uma mensagem sem bloquear o formulário.
+
+## Fluxo de branches (GitFlow)
+
+O GitFlow foi adotado a partir do commit `527a4c2`. O histórico anterior foi mantido, sem reescrita.
+
+- `main`: referência da versão estável; recebe lançamentos revisados e correções urgentes. Sua existência não significa que o site já esteja publicado em produção.
+- `develop`: integra as funcionalidades em desenvolvimento, antes do próximo lançamento.
+- `feature/<nome>`: nasce de `develop` e concentra uma funcionalidade. Após a verificação, retorna a `develop` por um merge com `--no-ff`, preservando o registro da integração.
+- `release/<versao>`: criada de `develop` quando uma versão estiver pronta para revisão final. Após a aprovação, é integrada a `main` e `develop`, com uma tag de versão em `main`.
+- `hotfix/<nome>`: criada de `main` quando houver uma falha urgente na versão estável. A correção retorna a `main` e `develop` (ou à release em andamento), evitando que se perca no próximo lançamento.
+
+Nesta adoção inicial, `feature/preferencias-colaboracao` reúne a persistência das opções de colaboração, o feedback de armazenamento, a correção da validação de rotas e a documentação correspondente. A funcionalidade é integrada a `develop`; `main` permanece na versão anterior até o próximo lançamento.
+
+Exemplo de trabalho em uma nova funcionalidade:
+
+```sh
+git switch develop
+git pull --ff-only origin develop
+git switch -c feature/nome-da-funcionalidade
+# Editar e verificar os arquivos.
+git add arquivos-alterados
+git commit -m "Descreve a funcionalidade implementada"
+git push -u origin feature/nome-da-funcionalidade
+# Revisar as alterações antes de integrar.
+git switch develop
+git merge --no-ff feature/nome-da-funcionalidade
+git push origin develop
+```
+
+Branches de funcionalidade normalmente são removidas após a integração. A primeira foi mantida para demonstrar a estrutura na atividade acadêmica. Branches `release/` e `hotfix/` são temporárias e só serão criadas quando houver trabalho correspondente. Regras de proteção e exigência de pull requests no GitHub ainda não foram configuradas.

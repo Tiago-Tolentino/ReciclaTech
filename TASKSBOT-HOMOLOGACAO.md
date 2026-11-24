@@ -3,3 +3,5 @@
 PR de teste para conferir a entrega do aviso de abertura pelo bot de homologação no Discord.
 
 Linha adicionada para validar o retorno à revisão.
+
+Marcador da rodada de teste do resumo por LLM no Discord.
